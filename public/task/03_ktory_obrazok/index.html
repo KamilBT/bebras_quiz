@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<script src="js/vue.js"></script>
+<script src="js/jquery.js"></script>
+
+<title>Skúškové projekty | 03 </title>
+</head>
+<body>
+<header>
+<h1>03 - Ktorú fotku chceš?</h1>
+</header>
+</head>
+<body style="margin: 0; padding: 0;">
+
+	<div id="app">
+			<!-- popis ulohy -->
+			<p class="desc" v-html="game_desc">
+			</p>
+
+			<div style="clear: both;"></div>
+			<p class="desc f-left" v-html="q1"></p><p class="desc f-left" v-html="a1"></p>
+			<div style="clear: both;"></div>
+			<p class="desc f-left" v-html="q2"></p><p class="desc f-left" v-html="a2"></p>
+			<div style="clear: both;"></div>
+			<p class="desc f-left" v-html="q3"></p><p class="desc f-left" v-html="a3"></p>
+			<div style="clear: both;"></div>
+
+			<p class="desc" v-html="game_desc2">
+			</p>
+			<br>
+
+			<!-- hracia plocha -->
+			<canvas id="canvas" style="display: block; width: 100%; height: 400px"></canvas>
+
+
+			<p class="my-0" style="clear: both; height:20px"></p>
+			<p class="desc my-0" id="result_stat" v-html="result_stat">
+
+			<p class="my-0" style="clear: both; height:20px"></p>
+			<p class="desc my-0" id="vypis" v-html="result"></p>
+	</div>
+
+	<script src="sprites2v.js"></script>
+	<script> var homeDir = ""; </script>
+	<script src="03_ktoru_fotku.js"></script>
+	<script>
+		var uloha = new f_03_ktoru_fotku("canvas", true, homeDir)
+	</script>
+
+</body>
+</html>

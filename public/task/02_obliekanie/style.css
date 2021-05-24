@@ -1,0 +1,40 @@
+#drag-wrap{
+  display: block;
+  position: relative;
+  min-height: 130px;
+}
+
+
+.desc{
+  max-width: 550px;
+  font-size: 16px;
+}
+
+.my-0{ margin-top: 0; margin-bottom: 0;}
+
+.place{
+  display: block;
+  float: left;
+  margin: 0 5px;
+  height: 36px;
+  width:  36px;
+  border: 2px solid black;
+}
+
+p, h1, form{ padding-left: 10px;}
+
+
+
+.room{
+  display: block;
+  float: left;
+  margin: 0 5px;
+  height: 40px;
+  width:  40px;
+  background: navy;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 40px;
+}

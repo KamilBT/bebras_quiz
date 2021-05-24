@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<script src="js/vue.js"></script>
+<script src="js/jquery.js"></script>
+
+<title>Skúškové projekty | 09 </title>
+</head>
+<body>
+<header>
+<h1>09 - Sieťová hra</h1>
+</header>
+</head>
+<body style="margin: 0; padding: 0;">
+
+	<div id="app">
+			<!-- popis ulohy -->
+			<p class="desc" v-html="game_desc">
+			</p>
+			<ul class="desc">
+			  <li v-for="desc in dataDesc" v-html="desc">
+			  </li>
+			</ul>
+
+			<p class="desc" v-html="game_desc2">
+			</p>
+			<br>
+
+			<!-- hracia plocha -->
+			<canvas id="canvas" style="display: block; width: 100%; height: 450px"></canvas>
+
+			<p class="desc" v-html="q">
+			<div class="f-left" style="padding:20px;">
+			<p class="f-left">a)</p><input style="margin:10px; margin-top:20px;" type="radio" v-model="solution" value="a" v-on:change="checkSol('a')">
+				<ol class="desc">
+				  <li v-for="name in prepSol.a" v-html="name">
+				  </li>
+				</ol>
+			</div>
+
+			<div class="f-left" style="padding:20px;">
+			<p class="f-left">b)</p><input style="margin:10px; margin-top:20px;" type="radio" v-model="solution" value="b" v-on:change="checkSol('b')">
+				<ol class="desc">
+				  <li v-for="name in prepSol.b" v-html="name">
+				  </li>
+				</ol>
+			</div>
+
+			<div class="f-left" style="padding:20px;">
+			<p class="f-left">c)</p><input style="margin:10px; margin-top:20px;" type="radio" v-model="solution" value="c" v-on:change="checkSol('c')">
+				<ol class="desc">
+				  <li v-for="name in prepSol.c" v-html="name">
+				  </li>
+				</ol>
+			</div>
+
+			<div class="f-left" style="padding:20px;">
+			<p class="f-left">d)</p><input style="margin:10px; margin-top:20px;" type="radio" v-model="solution" value="d" v-on:change="checkSol('d')">
+				<ol class="desc">
+				  <li v-for="name in prepSol.d" v-html="name">
+				  </li>
+				</ol>
+			</div>
+
+			<p class="my-0" style="clear: both; height:20px"></p>
+			<p class="desc my-0" id="vypis" v-html="result"></p>
+	</div>
+
+	<script src="sprites2v.js"></script>
+	<script> var homeDir = ""; </script>
+	<script src="09_siet_hra.js"></script>
+	<script>
+		var uloha = new f_09_siet_hra("canvas", true, homeDir)
+	</script>
+
+</body>
+</html>

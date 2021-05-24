@@ -1,0 +1,18 @@
+#drag-wrap{
+  display: block;
+  position: relative;
+  min-height: 130px;
+}
+
+
+.desc{
+  max-width: 550px;
+  font-size: 16px;
+}
+
+.my-0{ margin-top: 0; margin-bottom: 0;}
+
+
+p, h1, form{ padding-left: 10px;}
+
+.f-left { float: left;}

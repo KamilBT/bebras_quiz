@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Bebras Quiz | by KB</title>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <header class="quiz-header">
+        <h1><i class="fas fa-smile"></i> Bebras Quiz</h1>
+        <a id="leave-btn" class="btn">Leave Room</a>
+      </header>
+      <main class="quiz-main">
+        <div class="quiz-sidebar" id="sidebar">
+          <div id="manager-panel">            
+          </div>
+          <div class="room-info">
+            <h3><i class="fas fa-comments"></i> Room Name:</h3>
+            <h2 id="room-name"></h2>
+            <h3><i class="fas fa-users"></i> Users</h3>
+            <ul id="users"></ul>
+          </div>
+        </div>
+        <div class="quiz-space">
+         
+          <!-- panel for managing quiz -->
+          <div id="quiz-setup">           
+          </div>
+
+          <!-- transitions -->
+          <div id="quiz_transition_start">
+            <div class="timer-wrap">Quiz will start in<span class="timer"></span></div>
+          </div>
+
+          <!-- quiz task -->
+          <div id="quiz_task">
+          <iframe id="quiz_task_frame" src="./task/02_obliekanie/" width="95%" height="90%"></iframe>
+            <button id="solve" class="btn">Solve</button>
+          </div>
+
+          <!-- quiz solution status -->
+          <div id="quiz_status">
+            <h3 id="task_name"></h3>
+            <h3 style="text-align: center; margin-top: 30px;">Waiting for: <span id="on_task"></span></h3>            
+            <div id="solution_img"></div>
+            <div id="room_stat_task" style="display:flex;">
+                <div class="third">
+                  <h3>Correct</h3>
+                  <span id="correct_count"></span>
+                </div>
+                <div class="third">
+                  <h3>Wrong</h3>
+                  <span id="wrong_count"></span>
+                </div>
+                <div class="third">
+                  <h3>No answer</h3>
+                  <span id="none_count"></span>
+                </div>
+            </div>
+            <h3 style="text-align: center; margin-top: 30px;">Your answer was:</h3>
+            <div style="display:flex;">             
+              <div id="my_answer" class="third task_result mx-auto"></div>
+          </div>
+
+          </div>
+        </div>
+      </main>
+      <div class="quiz-form-container" id="admin_messages">
+        
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
