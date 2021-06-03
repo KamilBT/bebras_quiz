@@ -119,15 +119,17 @@ io.on('connection', socket => {
     console.log('starting next task '+data.nex_task);
     let task =  data.nex_task;
     //TODO get task list
-    task_list
+    task_list = ['02_obliekanie', '03_ktory_obrazok', '09_sietova_hra'];
 
     let i = task_list[task_list.indexOf(task)];
     let task_next = null;
     if(i < task_list.length -1);
       task_next = task_list[task_list.indexOf(task) + 1];
     
-    if(task_next !== null){
+    console.log(task_next);
+    if(task_next !== null && task !== undefined){
       const user = getCurrentUser(socket.id);
+
 
       let timer = timer_default;
       let task_timer = 40;
@@ -151,6 +153,25 @@ io.on('connection', socket => {
             );
           }     
       }, 1000);
+    }
+    else{
+      // quiz is over
+      const user = getCurrentUser(socket.id);
+      console.log('current user');
+      console.log(user);
+      let export_result = false;
+      if (user.status === 'creator'){
+        export_result = true;
+      }
+
+      let users = getRoomUsers(user.room);
+      console.log(users);
+      //get stats
+      socket
+        .emit(
+          'quiz_end',
+            {users, export_result}
+        );
     }
 
   });

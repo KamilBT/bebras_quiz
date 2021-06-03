@@ -19,6 +19,7 @@
         <a id="leave-btn" class="btn">Leave Room</a>
       </header>
       <main class="quiz-main">
+        
         <div class="quiz-sidebar" id="sidebar">
           <div id="manager-panel">            
           </div>
@@ -29,6 +30,7 @@
             <ul id="users"></ul>
           </div>
         </div>
+
         <div class="quiz-space">
          
           <!-- panel for managing quiz -->
@@ -68,9 +70,20 @@
             <h3 style="text-align: center; margin-top: 30px;">Your answer was:</h3>
             <div style="display:flex;">             
               <div id="my_answer" class="third task_result mx-auto"></div>
+            </div>
           </div>
 
-          </div>
+           <!-- quiz end -->
+           <div id="quiz_end">
+            <div class="timer-wrap">Quiz is completed<br>Thank you for participating :)</div>
+          </div> 
+          
+          <!-- quiz export -->
+          <div id="quiz_export">
+            <button class="btn" id="export">Export results</button>
+          </di>  
+
+         
         </div>
       </main>
       <div class="quiz-form-container" id="admin_messages">

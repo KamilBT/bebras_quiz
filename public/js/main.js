@@ -119,6 +119,8 @@ socket.on('quiz_start_transition', (data) => {
 });
 
 
+
+
 // update Quiz status after users submit solution (stats for all)
 socket.on('solutionUsers', (data) => {
   console.log(data);
@@ -139,6 +141,49 @@ function updateQuizStatus(task, answer){
   $('#solution_img').html(task);
 
 }
+
+//QUIZ END
+socket.on('quiz_end', (data) => {
+
+  console.log('quiz_end');
+  console.log(data);
+
+  let stats = {};
+  for(let i=0; i<data.users.length; i++){
+    if(!data.users[i].hasOwnProperty('status')){
+      for (const [key, value] of Object.entries(data.users[i].quiz)) {
+        //console.log(`${key}: ${value}`);
+        if (!stats.hasOwnProperty(key)) stats[key] = {};
+        
+        if (!stats[key].hasOwnProperty(value)) stats[key][value] = 1;
+        else stats[key][value]++;
+        
+      }
+    }
+  }
+  console.log(stats);
+
+  $('#quiz_transition_start').removeClass('active');
+  $('#quiz_status').removeClass('active');
+  if(data.export_result === true){
+    //screen for quiz admins
+    $('#quiz_export').addClass('active');
+  
+      var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(stats));
+      var a = document.createElement('a');
+      a.href = 'data:' + data;
+      a.download = 'quiz.json';
+      a.innerHTML = 'download JSON';
+      var container = document.getElementById('quiz_export');
+      container.appendChild(a);
+  
+  }
+  else{
+    //screen for quiz solvers
+    $('#quiz_end').addClass('active');
+  } 
+
+});
 
 
 // Output message to DOM
