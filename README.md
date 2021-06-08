@@ -13,8 +13,8 @@ Dependencies are:
   
 To run project, use npm start. It will create localhost server on port 3000 where you can preview this project.
 
-For now this is just a protoype:
-  - Quiz tasks a predefined
+For now this is just a prototype:
+  - Quiz tasks are predefined
   - Tasks are localy implemented
 
 Plan:
@@ -22,4 +22,4 @@ Plan:
   - enable creating own quiz from avaialble tasks
   - improve design
   - test with users
-  - improved versios based on results from testing
+  - improved versions based on results from testing
